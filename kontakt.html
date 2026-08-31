@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Minflow 3D Aguilar</title>
+    <meta name="description" content="Treten Sie mit Minflow 3D Aguilar in Kontakt. Ihr strategischer Partner für B2B-Distribution und E-Commerce im Dreiländereck.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #071328;
+            --primary-blue: #102a45;
+            --accent-blue: #1d4ed8;
+            --accent-hover: #1e40af;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-blue);
+        }
+
+        .contact-page-section {
+            padding: 5rem 0;
+        }
+
+        .contact-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .contact-header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-header p {
+            color: var(--text-light);
+            font-size: 1.15rem;
+        }
+
+        .form-container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: var(--primary-dark);
+            color: var(--white);
+            border-radius: 8px;
+            padding: 3.5rem;
+            box-shadow: 0 20px 25px -5px rgba(7, 19, 40, 0.15);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #cbd5e1;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background-color: #0f1d36;
+            border: 1px solid #334155;
+            border-radius: 4px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .form-submit-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        footer {
+            background-color: #040a17;
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+            margin-top: 5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: span 1; }
+            .form-container { padding: 1.5rem; }
+            .contact-header h1 { font-size: 2.2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Minflow 3D Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#expertise">Strategie</a></li>
+                <li><a href="index.html#leistungen">Partnerleistungen</a></li>
+                <li><a href="index.html#ankauf">Ankaufsprofil</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="contact-page-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1>Lassen Sie uns ins Gespräch kommen</h1>
+                <p>Ganz gleich ob Sortimentsangebot, Bestandsübernahme oder Kooperationsanfrage – wir freuen uns auf den Austausch.</p>
+            </div>
+
+            <div class="form-container">
+                <!-- Das Formular schickt die Daten direkt an die kleine send.php auf deinem Server -->
+                <form action="send.php" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firma">Unternehmensname *</label>
+                            <input type="text" id="firma" name="firma" required placeholder="z.B. Muster GmbH">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Ansprechpartner *</label>
+                            <input type="text" id="name" name="name" required placeholder="Vor- und Nachname">
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="email">E-Mail-Adresse *</label>
+                            <input type="email" id="email" name="email" required placeholder="name@unternehmen.de">
+                        </div>
+                        <div class="form-group">
+                            <label for="anfrage-art">Art der Anfrage *</label>
+                            <select id="anfrage-art" name="anfrage_art" required>
+                                <option value="" disabled selected>Bitte wählen...</option>
+                                <option value="Sortiment & Marken anbieten">Sortiment & Marken anbieten</option>
+                                <option value="Produkt- & Bestandsanfrage">Produkt- & Bestandsanfrage</option>
+                                <option value="Allgemeine Kooperation">Allgemeine Kooperation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="nachricht">Ihre Nachricht / Projektdetails *</label>
+                        <textarea id="nachricht" name="nachricht" required placeholder="Teilen Sie uns wichtige Eckdaten zu Ihrem Anliegen, Produkten oder Beständen mit..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">Anfrage absenden</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Unternehmenssitz</h4>
+                    <p><strong>Minflow 3D Aguilar</strong></p>
+                    <p>Inselstrasse 55</p>
+                    <p>4057 Basel, Schweiz</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontaktdaten</h4>
+                    <p>Inhaber: Juan Aguilar</p>
+                    <p>E-Mail: Juan@minflow3d.com</p>
+                    <p>UID: CHE-373.698.455</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Fokusmärkte</h4>
+                    <p>Deutschland (DE)</p>
+                    <p>Schweiz (CH)</p>
+                    <p>Frankreich (FR)</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches & Compliance</h4>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                    <a href="agb.html">AGB</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Minflow 3D Aguilar. Alle Rechte vorbehalten.</p>
+                <p>B2B-Distribution & E-Commerce Management</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const thema = urlParams.get('thema');
+        const selectBox = document.getElementById('anfrage-art');
+        
+        if (thema === 'sortiment') {
+            selectBox.value = 'Sortiment & Marken anbieten';
+        } else if (thema === 'produkt') {
+            selectBox.value = 'Produkt- & Bestandsanfrage';
+        }
+    </script>
+</body>
+</html>
