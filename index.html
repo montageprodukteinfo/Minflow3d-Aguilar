@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minflow 3D Aguilar | Strategischer E-Commerce-Partner & B2B-Distributor</title>
+    <meta name="description" content="Strategischer B2B-Distributor und E-Commerce-Partner im Dreiländereck (Deutschland, Schweiz, Frankreich). Wir unterstützen Marken bei digitaler Expansion und Marketplace-Management.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #071328;
+            --primary-blue: #102a45;
+            --accent-blue: #1d4ed8;
+            --accent-hover: #1e40af;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Ermöglicht das weiche Scrollen zu den Abschnitten */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header / Navigation */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 7rem 0 6rem;
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+            max-width: 950px;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            max-width: 850px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-outline {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-dark);
+        }
+
+        /* Sections General */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: 2.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .expertise {
+            background-color: var(--white);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .expertise-text p {
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .cards-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 2.5rem 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .contact-cta {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .contact-cta h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.25rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: underline;
+            padding-bottom: 3px;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        /* Legal Section (Impressum, Datenschutz, AGB direkt auf der Seite) */
+        .legal-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid #cbd5e1;
+            padding: 5rem 0;
+        }
+
+        .legal-box {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .legal-box h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .legal-box h3 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-box p {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        /* Professional B2B Footer */
+        footer {
+            background-color: #040a17;
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .expertise-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                minflow3d
+            </a>
+            <ul class="nav-links">
+                <li><a href="#expertise">Strategie</a></li>
+                <li><a href="#leistungen">Partnerleistungen</a></li>
+                <li><a href="#ankauf">Ankaufsprofil</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Strategischer E-Commerce-Partner & B2B-Distributor im Dreiländereck</h1>
+            <p>Von unserem Logistik- und Unternehmensstandort in der Region Deutschland–Schweiz–Frankreich unterstützen wir etablierte Marken und Hersteller dabei, ihre digitale Präsenz, ihre Markenautorität und ihren Abverkauf auf Amazon und führenden europäischen Online-Kanälen nachhaltig zu skalieren.</p>
+            <div class="hero-buttons">
+                <a href="#kontakt" class="btn-primary">Sortiment / Marken anbieten</a>
+                <a href="#kontakt" class="btn-outline">Produkt- / Bestandsanfrage</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="expertise-grid">
+                <div>
+                    <h2 class="section-title">Strategische Expertise</h2>
+                </div>
+                <div class="expertise-text">
+                    <p><strong>Minflow 3D Aguilar</strong> ist ein dynamisch wachsendes Handels- und Vertriebsunternehmen mit strategischem Sitz im Dreiländereck. Wir sind spezialisiert auf den professionellen Online-Handel und die Multi-Channel-Distribution über E-Commerce und Amazon FBA.</p>
+                    <p>Unsere geografische und wirtschaftliche Verankerung im grenzüberschreitenden Raum prädestiniert uns dafür, Marken reibungslos über Ländergrenzen hinweg zu vertreiben. Statt starrer Nischen-Beschränkungen fokussieren wir uns auf exzellente Execution: Wir identifizieren marktgerechte Produkte, steuern die digitale Vermarktung und wickeln den gesamten Prozess effizient ab.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leistungen" class="cards-section">
+        <div class="container">
+            <h2 class="section-title">Partnerleistungen</h2>
+            <p class="section-subtitle">Warum arbeiten Markenhersteller, Grossisten und Markenbesitzer mit uns zusammen?</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Grenzüberschreitende Reichweite</h3>
+                    <p>Gezielter Zugang zu neuen Absatzmärkten in DACH und Frankreich durch unsere optimale Logistik-Anbindung im Dreiländereck.</p>
+                </div>
+                <div class="card">
+                    <h3>Markenidentität & Wert</h3>
+                    <p>Höchster Wert auf Preisstabilität, saubere Produktpräsentation mit A+-Content und die strikte Einhaltung aller Markenrichtlinien.</p>
+                </div>
+                <div class="card">
+                    <h3>Zuverlässige Abnahmemengen</h3>
+                    <p>Ob regelmäßiger Nachschub oder die professionelle Übernahme von Restposten und Überbeständen – wir agieren partnerschaftlich und langfristig.</p>
+                </div>
+                <div class="card">
+                    <h3>Supply-Chain & Compliance</h3>
+                    <p>Unsere Prozesse sind auf moderne Logistikstrukturen, Amazon FBA und grenzüberschreitenden Warenverkehr ausgelegt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ankauf" class="expertise">
+        <div class="container">
+            <h2 class="section-title">Unser Ankaufsprofil</h2>
+            <p class="section-subtitle">Worauf wir bei der Auswahl unserer Vertriebspartner und Sortimente achten.</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Nachfragegetrieben</h3>
+                    <p>Wir listen und vertreiben ausschließlich Produkte mit gesunder und nachweisbarer Marktnachfrage.</p>
+                </div>
+                <div class="card">
+                    <h3>Qualitätsgeprüft</h3>
+                    <p>Wir arbeiten verlässlich, transparent und auf Augenhöhe partnerschaftlich mit Herstellern und Grossisten zusammen.</p>
+                </div>
+                <div class="card">
+                    <h3>Konformität</h3>
+                    <p>Bei unseren Handelsbeziehungen und Produkten achten wir konsequent auf rechtliche Anforderungen und Compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="contact-cta">
+        <div class="container">
+            <h2>Lassen Sie uns über Ihr Sortiment sprechen.</h2>
+            <p>Sie möchten neue Vertriebswege erschließen oder professionell Restposten und Überbestände vermarkten? Wir freuen uns auf Ihre Nachricht.</p>
+            <a href="mailto:Juan@minflow3d.com" class="contact-email">Juan@minflow3d.com</a>
+        </div>
+    </section>
+
+    <!-- Rechtstexte (Direkt auf der Seite integriert, damit keine 404-Fehler entstehen) -->
+    <div class="legal-section">
+        <div class="container">
+            
+            <!-- Impressum -->
+            <div id="impressum" class="legal-box">
+                <h2>Impressum</h2>
+                <h3>Angaben gemäß Schweizer Recht</h3>
+                <p><strong>Minflow 3D Aguilar</strong><br>
+                Einzelunternehmen<br>
+                Inselstrasse 55<br>
+                4057 Basel<br>
+                Schweiz</p>
+
+                <h3>Vertretungsberechtigte Person</h3>
+                <p>Juan Aguilar (Inhaber)</p>
+
+                <h3>Kontakt</h3>
+                <p>E-Mail: <a href="mailto:Juan@minflow3d.com">Juan@minflow3d.com</a></p>
+
+                <h3>Identifikationsnummer (UID)</h3>
+                <p>CHE-373.698.455</p>
+
+                <h3>Haftungsausschluss</h3>
+                <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.</p>
+            </div>
+
+            <!-- Datenschutz -->
+            <div id="datenschutz" class="legal-box">
+                <h2>Datenschutzerklärung</h2>
+                <h3>1. Datenschutz auf einen Blick</h3>
+                <p>Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst.</p>
+
+                <h3>2. Verantwortliche Stelle</h3>
+                <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
+                Minflow 3D Aguilar, Juan Aguilar, Inselstrasse 55, 4057 Basel, Schweiz<br>
+                E-Mail: Juan@minflow3d.com</p>
+
+                <h3>3. Erfassung von Daten beim Besuch der Website</h3>
+                <p>Beim Aufrufen unserer Website werden durch den Hosting-Provider automatisch Informationen in sogenannten Server-Log-Files erhoben (z.B. Browsertyp, Betriebssystem, Referrer URL, IP-Adresse, Uhrzeit der Anfrage). Diese Daten sind technisch notwendig, um die Website korrekt auszuliefern.</p>
+            </div>
+
+            <!-- AGB -->
+            <div id="agb" class="legal-box">
+                <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
+                <h3>1. Geltungsbereich</h3>
+                <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Geschäftsbeziehungen zwischen <strong>Minflow 3D Aguilar</strong> (Inselstrasse 55, 4057 Basel, Schweiz) und gewerblichen Partnern, Großhändlern sowie Markenherstellern (B2B).</p>
+
+                <h3>2. Vertragsgegenstand</h3>
+                <p>Gegenstand des Vertrages ist der Handel, die Distribution sowie die strategische Marken- und E-Commerce-Betreuung von Produkten im Dreiländereck (Deutschland, Schweiz, Frankreich).</p>
+
+                <h3>3. Gerichtsstand und anwendbares Recht</h3>
+                <p>Für alle Rechtsbeziehungen zwischen Minflow 3D Aguilar und den Geschäftspartnern gilt das <strong>Schweizer Recht</strong>. Ausschließlicher Gerichtsstand ist <strong>Basel, Schweiz</strong>.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Professional B2B Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Unternehmenssitz</h4>
+                    <p><strong>Minflow 3D Aguilar</strong></p>
+                    <p>Inselstrasse 55</p>
+                    <p>4057 Basel, Schweiz</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontaktdaten</h4>
+                    <p>Inhaber: Juan Aguilar</p>
+                    <p>E-Mail: Juan@minflow3d.com</p>
+                    <p>UID: CHE-373.698.455</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Fokusmärkte</h4>
+                    <p>Deutschland (DE)</p>
+                    <p>Schweiz (CH)</p>
+                    <p>Frankreich (FR)</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches & Compliance</h4>
+                    <a href="#impressum">Impressum</a>
+                    <a href="#datenschutz">Datenschutz</a>
+                    <a href="#agb">AGB</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Minflow 3D Aguilar. Alle Rechte vorbehalten.</p>
+                <p>B2B-Distribution & E-Commerce Management</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
