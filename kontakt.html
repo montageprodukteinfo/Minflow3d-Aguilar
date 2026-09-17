@@ -1,0 +1,164 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="de">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Kontakt | Minflow 3D Aguilar</title>\
+    <style>\
+        /* Global Styles */\
+        body \{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #fcfcfc; \}\
+        header \{ background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; \}\
+        .logo \{ font-weight: bold; font-size: 1.2rem; color: #111; \}\
+        nav a \{ margin-left: 20px; text-decoration: none; color: #555; \}\
+        \
+        /* Formular-Container & UX-Handling */\
+        .container \{ max-width: 750px; margin: 60px auto; padding: 40px; background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eef0f2; \}\
+        h1 \{ font-size: 2rem; color: #111; margin-top: 0; margin-bottom: 10px; \}\
+        .subtitle \{ color: #666; margin-bottom: 35px; font-size: 1.05rem; \}\
+        \
+        .form-group \{ margin-bottom: 22px; display: flex; flex-direction: column; \}\
+        .form-row \{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; \}\
+        \
+        /* Barrierefreie Labels und responsive Eingabefelder */\
+        label \{ font-size: 0.9rem; font-weight: 600; color: #222; margin-bottom: 8px; \}\
+        input[type="text"], input[type="email"], input[type="url"], input[type="number"], select, textarea \{\
+            padding: 12px 15px; font-size: 0.95rem; border: 1px solid #ccc; border-radius: 5px; background-color: #fff; transition: all 0.2s ease; width: 100%; box-sizing: border-box;\
+        \}\
+        input:focus, select:focus, textarea:focus \{ border-color: #0056b3; outline: none; box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15); \}\
+        \
+        /* Dynamische B2B-Erweiterung */\
+        .b2b-box \{ display: none; background-color: #f4f7fa; padding: 20px; border-left: 4px solid #0056b3; margin: 10px 0 25px 0; border-radius: 0 6px 6px 0; \}\
+        .required-star \{ color: #dc3545; margin-left: 2px; \}\
+        \
+        /* Premium Absende-Button */\
+        .btn-submit \{ background-color: #0056b3; color: white; border: none; padding: 14px 30px; font-size: 1rem; font-weight: 600; border-radius: 5px; cursor: pointer; transition: background 0.2s; width: 100%; margin-top: 10px; \}\
+        .btn-submit:hover \{ background-color: #004085; \}\
+\
+        @media (max-width: 600px) \{ .form-row \{ grid-template-columns: 1fr; gap: 0; \} \}\
+        footer \{ background: #111; color: #aaa; padding: 40px 5%; margin-top: 100px; font-size: 0.9rem; \}\
+    </style>\
+</head>\
+<body>\
+\
+    <header>\
+        <div class="logo">Minflow 3D Logo</div>\
+        <nav>\
+            <a href="index.html">\uc0\u8592  Zur\'fcck zur Startseite</a>\
+        </nav>\
+    </header>\
+\
+    <div class="container">\
+        <h1>Lassen Sie uns ins Gespr\'e4ch kommen</h1>\
+        <p class="subtitle">Ganz gleich ob Markenlistung, Bestands\'fcbernahme oder Kooperationsanfrage \'96 wir freuen uns auf den Austausch.</p>\
+\
+        <!-- SEO-optimiertes und barrierefreies Formular -->\
+        <form id="contactForm" action="#" method="POST">\
+            \
+            <div class="form-row">\
+                <div class="form-group">\
+                    <label for="company">Unternehmensname<span class="required-star">*</span></label>\
+                    <input type="text" id="company" name="company" required placeholder="z.B. M\'fcller GmbH" aria-required="true">\
+                </div>\
+                <div class="form-group">\
+                    <label for="website">Website / Online-Auftritt</label>\
+                    <input type="url" id="website" name="website" placeholder="https://ihre-marke.de">\
+                </div>\
+            </div>\
+\
+            <div class="form-row">\
+                <div class="form-group">\
+                    <label for="contact_person">Ansprechpartner<span class="required-star">*</span></label>\
+                    <input type="text" id="contact_person" name="contact_person" required placeholder="Vor- und Nachname" aria-required="true">\
+                </div>\
+                <div class="form-group">\
+                    <label for="email">E-Mail-Adresse<span class="required-star">*</span></label>\
+                    <input type="email" id="email" name="email" required placeholder="name@firma.de" aria-required="true">\
+                </div>\
+            </div>\
+\
+            <div class="form-group">\
+                <label for="request_type">Grund der Kontaktaufnahme<span class="required-star">*</span></label>\
+                <select id="request_type" name="request_type" required aria-required="true" onchange="toggleB2BFields()">\
+                    <option value="" disabled selected>Bitte w\'e4hlen...</option>\
+                    <option value="brand_cooperation">Marke listen (Sortimentsangebot)</option>\
+                    <option value="stock_clearance">Bestand anbieten (Restposten / \'dcberh\'e4nge)</option>\
+                    <option value="general_cooperation">Allgemeine Kooperation</option>\
+                </select>\
+            </div>\
+\
+            <!-- INTELLIGENTE SNEAK-PEEK B2B FELDER (\'d6ffnen sich bei B2B-Bedarf) -->\
+            <div id="b2b_extension_fields" class="b2b-box">\
+                <div class="form-row">\
+                    <div class="form-group">\
+                        <label for="ust_id">Umsatzsteuer-Identifikationsnummer (USt-IdNr.)<span id="ust_required_star" class="required-star">*</span></label>\
+                        <input type="text" id="ust_id" name="ust_id" placeholder="z.B. DE123456789 oder CHE-123.456.789 MWST">\
+                    </div>\
+                    <div class="form-group">\
+                        <label for="sku_count">Ungef\'e4hre Anzahl Artikel (SKUs)</label>\
+                        <input type="number" id="sku_count" name="sku_count" placeholder="z.B. 45">\
+                    </div>\
+                </div>\
+            </div>\
+\
+            <div class="form-group">\
+                <label for="message">Details zu Ihrem Sortiment / Angebot<span class="required-star">*</span></label>\
+                <textarea id="message" name="message" rows="5" required placeholder="Beschreiben Sie kurz Ihre Produkte, Marken oder Ihren verf\'fcgbaren Bestand..." aria-required="true"></textarea>\
+            </div>\
+\
+            <button type="submit" class="btn-submit">Anfrage sicher absenden</button>\
+        </form>\
+    </div>\
+\
+    <footer>\
+        <div style="text-align: center; color: #666;">\
+            \'a9 2026 Minflow 3D Aguilar. B2B-Distribution & E-Commerce Management.\
+        </div>\
+    </footer>\
+\
+    <!-- SKRIPT F\'dcR AUTOMATISCHE LOGIK -->\
+    <script>\
+    function toggleB2BFields() \{\
+        const requestType = document.getElementById('request_type').value;\
+        const b2bSection = document.getElementById('b2b_extension_fields');\
+        const ustIdInput = document.getElementById('ust_id');\
+        const ustStar = document.getElementById('ust_required_star');\
+\
+        if (requestType === 'brand_cooperation' || requestType === 'stock_clearance') \{\
+            b2bSection.style.display = 'block';\
+            ustIdInput.required = true;\
+            ustIdInput.setAttribute('aria-required', 'true');\
+            ustStar.style.display = 'inline';\
+        \} else \{\
+            b2bSection.style.display = 'none';\
+            ustIdInput.required = false;\
+            ustIdInput.removeAttribute('aria-required');\
+            ustStar.style.display = 'none';\
+            ustIdInput.value = '';\
+        \}\
+    \}\
+\
+    // Liest den Klick von der Startseite aus (?type=brand oder ?type=stock)\
+    window.addEventListener('DOMContentLoaded', () => \{\
+        const urlParams = new URLSearchParams(window.location.search);\
+        const type = urlParams.get('type');\
+        const selectDropdown = document.getElementById('request_type');\
+\
+        if (type === 'brand') \{\
+            selectDropdown.value = 'brand_cooperation';\
+            toggleB2BFields();\
+        \} else if (type === 'stock') \{\
+            selectDropdown.value = 'stock_clearance';\
+            toggleB2BFields();\
+        \}\
+    \});\
+    </script>\
+</body>\
+</html>\
+}
